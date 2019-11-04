@@ -1,0 +1,459 @@
+<div id="MizuxeBook">
+
+  <nav class="navbar navbar-expand-md navbar-light fixed-top py-2">
+    <div class="container">
+      <a class="navbar-brand text-primary">
+        <img src="../../../assets/logos/Boostrap_logo.svg" class="ml-2" height="50" class="d-inline-block align-center"
+          alt="">
+        <h3 class="d-inline align-middle ml-2 ">
+          Mizuxe
+        </h3>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse"
+        (click)="isNavbarCollapsed = !isNavbarCollapsed" data-target="#navbarsDefault" aria-controls="navbarsDefault"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div [ngbCollapse]="isNavbarCollapsed" class="collapse navbar-collapse" id="navbarsDefault">
+        <ul class="navbar-nav ml-auto ">
+          <li class="nav-item">
+            <a class="nav-link" href="#home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#authors">Meet the autors</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+  </nav>
+
+  <!-- ----SHOWCASE---- -->
+  <section id="showcase">
+    <div class="primary-overlay text-white">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 py-4 text-center">
+            <h1 class="display-2 mt-4 pt-5 ">
+              So What You Dream Of...
+            </h1>
+            <p class="lead mt-2">
+              La verdad es que hay bastantes libros, que aparecen agrupados por género: novelas, sobre economía,
+              ensayos, etc.
+            </p>
+            <a href="#" class="btn btn-outline-primary border-light btn-lg text-white">
+              <i class="fa fa-arrow-right"></i> Read More
+            </a>
+          </div>
+          <div class="col-lg-6 py-4 mt-3" fxLayoutAlign="center center">
+            <img src="'../../../../../assets/background/poster.jpg" data-wow-delay=".25s" data-wow-duration=".75s"
+              style="max-height: 400px;width: auto ; box-shadow: 2px 2px 5px #3292a6;" alt=""
+              class="d-none wow fadeInUp d-lg-block">
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ----NEWLETTER------>
+  <section id="newletter" class="bg-dark py-5 text-white">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-4 py-2">
+          <input type="text" class="form-control form-control-lg" placeholder="Username">
+        </div>
+        <div class="col-md-4 py-2">
+          <input type="email" class="form-control form-control-lg" placeholder="Email">
+        </div>
+        <div class="col-md-4 py-2">
+          <button type="submit" class="btn btn-primary btn-lg btn-block">Enviar</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ----BOXES------>
+  <section id="boxes" class="py-4">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-lg-3 py-2" *ngFor="let item of [1,2,3,4]">
+          <div *ngIf="item%2==1" class="card text-center border-primary">
+            <div class="card-body">
+              <h3 *ngIf="item==1" class="text-primary">Be Better</h3>
+              <h3 *ngIf="item==3" class="text-primary">Be Stronger</h3>
+              <p class="text-muted">
+                Thus, our report can be better geared towards the monitoring and evaluation of its commitments.
+              </p>
+            </div>
+          </div>
+          <div *ngIf="item%2==0" class="card bg-primary">
+            <div class="card-body">
+              <h3 *ngIf="item==2" class="text-white">Be Smarter</h3>
+              <h3 *ngIf="item==4" class="text-white">Be Faster</h3>
+              <p class="text-white">
+                Thus, our report can be better geared towards the monitoring and evaluation of its commitments.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ----ABOUTS------>
+  <section id="abouts" class="py-4 bg-light text-center">
+    <div class="container">
+      <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="gappx">
+        <div class="col text-center" fxFlex="50">
+          <div class="py-2" style="border-bottom: 1px solid #ddd;">
+            <h1 class="display-5 text-primary">
+              Why this book
+            </h1>
+            <p class="lead mb-2">Porque estos libros son muy importantes para tu desarrollo
+              profecional</p>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-2">
+        <div class="col">
+          <ngb-accordion [closeOthers]="true" #acc="ngbAccordion">
+            <ngb-panel>
+
+              <ng-template ngbPanelHeader let-opened="opened">
+                <div class="d-flex align-items-center justify-content-center">
+                  <button ngbPanelToggle class="btn btn-link">
+                    <i *ngIf="!opened" class="fas fa-arrow-circle-down text-dark" style="font-size: 24px;"></i>
+                    <i *ngIf="opened" class="fas fa-arrow-circle-up text-dark" style="font-size: 24px;"></i>
+                  </button>
+                  <span class="h5">First panel</span>
+                </div>
+              </ng-template>
+              <ng-template ngbPanelContent>
+                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
+                moon officia
+                aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf
+                moon tempor,
+                sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim
+                keffiyeh helvetica,
+                craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
+                Leggings
+                occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them
+                accusamus
+                labore sustainable VHS.
+              </ng-template>
+
+            </ngb-panel>
+            <ngb-panel>
+              <ng-template ngbPanelHeader let-opened="opened">
+                <div class="d-flex align-items-center justify-content-center">
+                  <button ngbPanelToggle class="btn btn-link">
+                    <i *ngIf="!opened" class="fas fa-arrow-circle-down text-dark" style="font-size: 24px;"></i>
+                    <i *ngIf="opened" class="fas fa-arrow-circle-up text-dark" style="font-size: 24px;"></i>
+                  </button>
+                  <span class="h5">Second panel</span>
+                </div>
+              </ng-template>
+              <ng-template ngbPanelContent>
+                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
+                moon officia
+                aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf
+                moon tempor,
+                sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim
+                keffiyeh helvetica,
+                craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
+                Leggings.
+              </ng-template>
+
+            </ngb-panel>
+            <ngb-panel>
+              <ng-template ngbPanelHeader let-opened="opened">
+                <div class="d-flex align-items-center justify-content-center">
+                  <button ngbPanelToggle class="btn btn-link">
+                    <i *ngIf="!opened" class="fas fa-arrow-circle-down text-dark" style="font-size: 24px;"></i>
+                    <i *ngIf="opened" class="fas fa-arrow-circle-up text-dark" style="font-size: 24px;"></i>
+                  </button>
+                  <span class="h5">Third panel</span>
+                </div>
+              </ng-template>
+              <ng-template ngbPanelContent>
+                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
+                moon tempor,sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil
+                anim
+                keffiyeh helvetica,
+                craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
+                Leggings.
+              </ng-template>
+
+            </ngb-panel>
+
+          </ngb-accordion>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!------SERVICES------>
+  <section id="services" class=" mt-2 py-4">
+    <div class="container">
+      <div class="h2 text-center wow fadeInDown" data-wow-delay=".5s" data-wow-duration="1s" style="font-weight: 600">
+        Services
+        <div class="bg-primary mt-2 mb-4 ml-auto mr-auto" style="width: 30px; height: 4px;border-radius: 4px;">
+        </div>
+      </div>
+
+      <div class="row wow wow fadeInDown" data-wow-delay=".5s" data-wow-duration="1s">
+        <div class="col-md-4" id="cardService">
+          <div class="row">
+            <div class="col-3 text-right py-1" style="padding: 0px !important; padding-top: 16px !important;">
+              <i class="mdi mdi-edit text-info text-white p-2" style="font-size: 65px;"></i>
+            </div>
+            <div class="col-9 py-2 px-3 align-self-start">
+              <h1 class="h5">WEB DESIGN</h1>
+              <p class="text-muted"> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci deleniti ad
+                atque nihil eligendi.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4" id="cardService">
+          <div class="row">
+            <div class="col-3 text-right py-1" style="padding: 0px !important; padding-top: 16px !important;">
+              <i class="mdi mdi-computer text-info p-2 " style="font-size: 65px;"></i>
+            </div>
+            <div class="col-9 py-2 px-3 align-self-start">
+              <h1 class="h5">WEB DEVELOPER</h1>
+              <p class="text-muted"> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci deleniti ad
+                atque nihil eligendi.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4" id="cardService">
+          <div class="row">
+            <div class="col-3 text-right py-1" style="padding: 0px !important; padding-top: 16px !important;">
+              <i class="mdi mdi-smartphone text-info p-2 " style="font-size: 65px;"></i>
+            </div>
+            <div class="col-9 py-2 px-3 align-self-start">
+              <h1 class="h5">MOBILE APPS</h1>
+              <p class="text-muted"> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci deleniti ad
+                atque nihil eligendi.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row wow wow fadeInUp" data-wow-delay=".5s" data-wow-duration="1s">
+        <div class="col-md-4" id="cardService">
+          <div class="row">
+            <div class="col-3 text-right py-1" style="padding-top: 16px !important;">
+              <i class="mdi mdi-search text-info p-2" style="font-size: 65px;"></i>
+            </div>
+            <div class="col-9 py-2 px-3 align-self-start">
+              <h1 class="h5">SEO OPTIMIZATIONS</h1>
+              <p class="text-muted"> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci deleniti ad
+                atque nihil eligendi.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4" id="cardService">
+          <div class="row">
+            <div class="col-3 text-right py-1" style="padding: 0px !important; padding-top: 16px !important;">
+              <i class="mdi mdi-edit text-info p-2" style="font-size: 65px;"></i>
+            </div>
+            <div class="col-9 py-2 px-3 align-self-start">
+              <h1 class="h5">UDX DESIGNS</h1>
+              <p class="text-muted"> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci deleniti ad
+                atque nihil eligendi.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4" id="cardService">
+          <div class="row">
+            <div class="col-3 text-right py-1" style="padding: 0px !important; padding-top: 16px !important;">
+              <i class="mdi mdi-settings text-info p-2" style="font-size: 65px;"></i>
+            </div>
+            <div class="col-9 py-2 px-3 align-self-start">
+              <h1 class="h5">SUPORTS</h1>
+              <p class="text-muted"> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci deleniti ad
+                atque nihil eligendi.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- <i class="mdi mdi-account-circle "></i> -->
+  </section>
+
+  <!------We ARE------>
+  <section id="WeAre" class="mt-5 py-4">
+    <div id="diagonal-bg"></div>
+    <div class="container">
+      <div class="row align-items-center" style="height: 600px;">
+        <div class="col">
+          <div class="h2 wow fadeInDown" data-wow-delay=".5s" data-wow-duration="1s" style="font-weight: 600">
+            About
+            <div class="bg-info mt-2 mb-4 mr-auto" style="width: 30px; height: 4px;border-radius: 4px;">
+            </div>
+          </div>
+          <p class="text-muted wow fadeInDown" data-wow-delay=".5s" data-wow-duration="1s">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi debitis ullam dignissimos vel, odio
+            incidunt assumenda quis vitae inventore temporibus voluptatibus aliquam modi fugiat sint voluptas molestias.
+          </p>
+          <a href="" class="btn btn-outline-primary btn-block wow fadeInDown" data-wow-delay=".5s"
+            data-wow-duration="1s">
+            Our Work
+          </a>
+        </div>
+      </div>
+
+    </div>
+    <!-- <i class="mdi mdi-account-circle "></i> -->
+  </section>
+
+  <!------MEET THE AUTORS------>
+  <section id="autors" class="py-4">
+    <div class="container">
+      <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="gappx">
+        <div class="col text-center" fxFlex="50">
+          <div class="py-2" style="border-bottom: 1px solid #ddd;">
+            <h1 class="display-5 text-primary">
+              Meet the autors
+            </h1>
+            <p class="lead mb-2">Hay que conocer a los autores de todo el mundo</p>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div *ngFor="let user of this.arrayUsers" class="col-lg-3 col-md-6 py-4">
+          <div class="card text-center wow zoomInLeft" data-wow-delay=".75">
+            <div class="card-body">
+              <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="gappx">
+                <div [style.background-image]="getSafeImage(user.image)" fxLayoutAlign="center center"
+                  class="imgAvatar rounded-circle mb-3">
+                </div>
+              </div>
+
+              <h3>{{user.name}}</h3>
+              <h5 class="text-muted">{{user.ocupation}}</h5>
+              <p class="text-muted">
+                {{(user.description.length>60)?user.description.substr(0,57)+'...':user.description}}
+              </p>
+              <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="gappx">
+                <div class="p-4">
+                  <a href="#"><i class="fab fa-facebook"></i></a>
+                </div>
+                <div class="p-4">
+                  <a href="#"><i class="fab fa-google"></i></a>
+                </div>
+                <div class="p-4">
+                  <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+  <!-- ----CONTACT US---- -->
+  <section id="contactUs" class="py-4 bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-9">
+          <h1 class="h3">Get In Touch</h1>
+          <p class="text-muted">Mandanos tus impresiones para retroalimentarnos de ello.</p>
+          <form>
+            <div class="form-group">
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon1">
+                    <i class="fas fa-user"></i>
+                  </span>
+                </div>
+                <input type="text" class="form-control" placeholder="Username" aria-label="Username"
+                  aria-describedby="basic-addon1">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon2">
+                    <i class="fas fa-envelope"></i>
+                  </span>
+                </div>
+                <input type="text" class="form-control" placeholder="Email" aria-label="Email"
+                  aria-describedby="basic-addon2">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon3">
+                    <i class="fas fa-edit"></i>
+                  </span>
+                </div>
+                <textarea type="text" class="form-control" rows="5" placeholder="Message" aria-label="Message"
+                  aria-describedby="basic-addon3"></textarea>
+              </div>
+            </div>
+
+          </form>
+        </div>
+        <div class="col-md-3 align-self-center text-center">
+          <h1 class="h5">Powered by</h1>
+          <div class="col align-self-center">
+            <img src="../../../assets//logos/angular-5-con-bootstrap.jpg" alt="" class="img-fluid">
+          </div>
+          <!-- <div class="self-align-center">
+            <img src="../../../assets//logos/angular-5-con-bootstrap.jpg" alt="" class="img-fluid">
+          </div> -->
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- -----FOOTER---- -->
+  <footer id="footer" class="py-5 bg-primary text-white">
+    <div class="container">
+      <div class="row ">
+        <div class="col-md-6 text-center">
+          <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="gappx">
+            <div class="p-2 text-white">
+              <a href="#"><i class="fab fa-bootstrap"></i></a>
+            </div>
+            <div class="p-2">
+              <a href="#"><i class="fab fa-angular"></i></a>
+            </div>
+            <div class="p-2">
+              <a href="#"><i class="fab fa-react"></i></a>
+            </div>
+            <div class="p-2">
+              <a href="#"><i class="fab fa-vuejs"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 text-center">
+          <!-- <p class="text-muted">Jose Alejandro Concepcion</p> -->
+          <p class="lead">Copiright &copy;2018</p>
+        </div>
+      </div>
+    </div>
+  </footer>

@@ -1,0 +1,131 @@
+$primary: #3292a6;
+$primary-overlay: rgba(50, 146, 166, 0.8);
+$grey-700:#616161;
+
+#MizuxeBook {
+
+  margin-top: 78px;
+
+  .navbar {
+    box-shadow: 2px 2px 5px $primary;
+    opacity: 0.9;
+    background: #fff;
+
+    .nav-item {
+      font-size: 1.4rem;
+      padding-right: 20px;
+    }
+  }
+
+
+  #showcase {
+    background: url('../../../assets/background/mountains~1.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    min-height: 480px;
+
+    .primary-overlay {
+      background-color: $primary-overlay;
+      position: initial;
+      top: 0;
+      left: 0;
+      width: 100%;
+      min-height: 480px;
+    }
+
+  }
+
+  #boxes {
+    .card {
+      box-shadow: 2px 2px 4px $primary;
+    }
+
+  }
+
+  #services {
+    #cardService {
+      i {
+        border-radius: 4px;
+      }
+
+      &:hover {
+        i {
+          background-color: #3292a6;
+          color: #fff !important;
+        }
+      }
+    }
+
+  }
+
+  #WeAre {
+    #diagonal-bg {
+      width: 60%;
+      height: 600px;
+      background-repeat: no-repeat;
+      float: right;
+      border-top: solid 600px transparent;
+      border-left: solid 240px #fff;
+      background-image: url(../../../assets/background/mountains~1.jpg);
+      background-size: cover;
+      background-attachment: fixed;
+    }
+  }
+
+  #autors {
+    .card {
+      box-shadow: 2px 2px 4px $grey-700;
+
+      &:hover {
+        background-color: $primary;
+        color: #fff;
+
+        .fab {
+          color: #fff;
+        }
+
+        p {
+          color: #fff !important;
+        }
+
+        h5 {
+          color: #fff !important;
+        }
+
+        h3 {
+          color: #fff !important;
+        }
+
+        .imgAvatar {
+          transform: scale(1.1);
+        }
+
+      }
+
+      .imgAvatar {
+        margin-top: -50px !important;
+        height: 100px;
+        width: 100px;
+        background-size: cover !important;
+        border: 2px solid #bbb;
+      }
+
+      .fab {
+        font-size: 24px;
+      }
+
+    }
+  }
+
+  #footer {
+    .fab {
+      font-size: 24px;
+      color: #fff !important;
+    }
+
+  }
+
+}
